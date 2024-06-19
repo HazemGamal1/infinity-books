@@ -7,12 +7,15 @@ import { groq } from 'next-sanity'
 import BookLandingCard from '@/app/components/BookLandingCard'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import LoadScreen from '@/app/components/LoadScreen'
+import BookLandingCardSkeleton from '@/app/components/BookLandingCardSkeleton'
 
 const CategoryPage = ({params} : {params: {category : string}}) => {
   const [books, setBooks] = useState<IBook[]>()
   const [viewArr, setViewArr] = useState<IBook[]>();
   const [searchVal, setSearchVal] = useState<string>();
   const [isLoading, setIsLoading] = useState<boolean>(false)
+  const arr = new Array(15).fill("");
   let finalString = "";
   const removeUnwanted = (word: string) => {
     const substringToRemove = "%20";
@@ -63,6 +66,9 @@ const CategoryPage = ({params} : {params: {category : string}}) => {
   
   return (
     <div className='max-w-screen-2xl mx-auto  pt-24'>
+      {
+        isLoading && <LoadScreen />
+      }
       <h1 className='font-bold text-neutral-500 text-3xl border-b-main pb-2 px-4'>{finalString}</h1>
       <form onSubmit={handleSubmit} className='flex gap-3 py-4 items-center px-4'>
         <label htmlFor='search'>Search</label>
@@ -77,7 +83,13 @@ const CategoryPage = ({params} : {params: {category : string}}) => {
       </div>
       <div className='grid px-2 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-2 py-4'>
         {
+          isLoading ? 
+            arr.map((book, index) => (
+              <BookLandingCardSkeleton key={index}/>
+            ))
+          :
           viewArr?.map((book) => (<BookLandingCard key={book.slug} isLoading={isLoading} slug={book.slug} author={book.author} price={book.price} previousPrice={book.previousPrice} title={book.title} image={book.imageUrl}/>))
+          
         }
       </div>
     </div>

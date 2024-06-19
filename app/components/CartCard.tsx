@@ -17,17 +17,16 @@ const CartCard = ({book} : {book: IcartItem}) => {
     }
   return (
     <div className='flex justify-between items-center w-full  py-6'>
-        <div className='flex gap-2'>
-            <div className='w-[3rem] h-[3rem]'><Image src={book.imageUrl} alt='cover art' className='object-cover object-center inset-0  my-auto' width={500} height={500}/></div>
+        <div className='flex gap-2 items-center'>
+            <div className='w-[3rem] h-[3rem]'><Image src={book.imageUrl} alt='cover art' className='object-contain object-center inset-0 ' width={500} height={500}/></div>
             <div className='flex flex-col'>
-            <p className='font-semibold'>
+            <p className='font-semibold text-sm lg:text-lg'>
                 {book.title}
             </p>
-            <p className='font text-neutral-500'>
+            <p className='font text-neutral-500 text-sm lg:text-lg'>
                 {book.author}
             </p>
-            <div className='font pt-2 flex gap-2'>
-                Quantity : 
+            <div className='font pt-3 flex gap-2 items-center'>
                 <div className='flex items-center gap-2 select-none'>
                     <div className='rounded-full border-2 text-xl fles items-center hover:text-main cursor-pointer' onClick={() => decreaseQuantity()}>
                         <BiMinus />

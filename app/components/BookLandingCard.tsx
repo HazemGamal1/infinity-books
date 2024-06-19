@@ -45,7 +45,7 @@ const BookLandingCard = ({image, title, author, price, previousPrice, slug, isLo
     }
   }
   return (
-    <div className="flex flex-col justify-between shadow-xl  hover:opacity-90 duration-500  h-full rounded-lg dark:bg-black bg-white relative">
+    <div className="flex flex-col justify-between shadow-xl  text-sm lg:text-xl hover:opacity-90 duration-500  h-full rounded-lg dark:bg-black bg-white relative">
       <Button onClick={() => handleAddToWishlist(title, image, author, price, slug)} variant={'outline'} className='z-[10] absolute top-2 right-2 max-w-max text-xs lg:text-lg group'>
         {
            isWishlisted ?

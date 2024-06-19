@@ -91,7 +91,7 @@ const Navbar = () => {
           initial={{y: -10, opacity: 0}}
           animate={{y: 0, opacity: 1}}
           transition={{ease: "easeInOut", duration: 0.75}}
-          className='fixed top-0 bg-white dark:bg-[black] w-full z-[20] border-b py-2 mx-auto flex items-center justify-between px-5'
+          className='fixed top-0 bg-white dark:bg-[black] w-full z-[20] border-b py-2 mx-auto flex items-center justify-between px-5 text-sm md:text-md lg:text-lg'
       >
       <h1 className='hover:opacity-95'><Link href="/" className='flex items-center '><BiInfinite className='text-5xl text-main'/>Infinity</Link></h1>
 
@@ -101,9 +101,9 @@ const Navbar = () => {
         <Sheet>
           <SheetTrigger>{
             wishlist.length > 0 ?
-            <FaHeart className='text-main text-2xl hover:opacity-95'/>
+            <FaHeart className='text-main lg:text-2xl hover:opacity-95 text-xl '/>
             :
-            <Heart className='text-2xl hover:opacity-95'/>
+            <Heart className='lg:text-2xl hover:opacity-95 text-xl'/>
           }</SheetTrigger>
           <SheetContent className="h-full overflow-y-auto">
             <SheetHeader>
@@ -123,7 +123,7 @@ const Navbar = () => {
         <Sheet>
           <SheetTrigger>
             <div className='relative w-full h-full'>
-              <FiShoppingCart className='text-2xl hover:opacity-95'/>
+              <FiShoppingCart className='text-xl lg:text-2xl hover:opacity-95'/>
               <div className='text-main rounded-full font-bold flex items-center absolute -top-2 -right-1 text-xs'>
                 {
                   cart.length > 0 &&
@@ -172,7 +172,7 @@ const Navbar = () => {
 
         <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
+        <Button variant="outline" size="icon" >
           <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
           <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
           <span className="sr-only">Toggle theme</span>

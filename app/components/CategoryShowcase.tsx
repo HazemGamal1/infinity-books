@@ -7,6 +7,7 @@ import { groq } from "next-sanity";
 import { IBook } from "../utils/interfaces";
 import Link from "next/link";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import BookLandingCardSkeleton from './BookLandingCardSkeleton';
 
 interface IProps {
   text: string,
@@ -18,6 +19,7 @@ interface IProps {
 const CategoryShowcase = ({text, category, categoryIndex, apiCall, bookOnPage} : IProps) => {
     const [books, setBooks] = useState<IBook[]>()
     const[isLoading, setIsLoading] = useState<boolean>(false);
+    const arr = new Array(5).fill("");
   useEffect(() => {
     const getCategoryBooks = async () => {
       setIsLoading(true);
@@ -45,22 +47,28 @@ const CategoryShowcase = ({text, category, categoryIndex, apiCall, bookOnPage} :
         :
         <Link href={`/categories/${category}`} className="mx-auto font-semibold text-2xl flex items-center gap-2 py-4 px-2 text-neutral-500 border-b-2 border-b-main hover:text-main duration-500">{text} <span className='text-xs'>Browse All</span><MdKeyboardArrowRight className='text-2xl text-main'/></Link>
       }
-        <div className="grid grid-cols-2  md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 px-4 gap-4 pt-4"> 
+        <div className="grid grid-cols-2  md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 px-2 gap-2 pt-4"> 
         {
-            books?.map((book, index) => (
-              
-                book.title !== bookOnPage &&
-                (
-                  <div key={index}>
-                    {
-                      book &&  
-                      <BookLandingCard isLoading={isLoading} slug={book.slug} image={book.imageUrl} title={book.title} author={book.author} price={book.price} previousPrice={book.previousPrice}/>
-                    }
-                  </div>
-                )
-              
+          isLoading ? 
+            arr.map((book, index) => (
+              <BookLandingCardSkeleton key={index}/>
             ))
+          :
+          books?.map((book, index) => (
+              
+            book.title !== bookOnPage &&
+            (
+              <div key={index}>
+                {
+                  book &&  
+                  <BookLandingCard isLoading={isLoading} slug={book.slug} image={book.imageUrl} title={book.title} author={book.author} price={book.price} previousPrice={book.previousPrice}/>
+                }
+              </div>
+            )
+          
+          ))
         }
+
         </div>
     </section>
   )
