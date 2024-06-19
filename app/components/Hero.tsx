@@ -53,7 +53,7 @@ const Hero = () => {
                 <Link href="books/it-ends-with-us"><Image src={image5} alt="cover" className={`z-[10] absolute shadow-xl rounded-lg left-[8rem] top-[13rem] hover:scale-105 transition-transform duration-500 cursor-pointer`} width={160} height={160}/></Link>
                 <Link href="books/ardh-zykwla"><Image src={image9} alt="cover" className={`absolute z-10 shadow-xl rounded-lg right-[25rem] bottom-[20rem] hover:scale-105 transition-transform duration-500 cursor-pointer`} width={170} height={170}/></Link>
                 <Link href="books/the-power-of-habit"><Image src={image6} alt="cover" className={`absolute shadow-xl rounded-lg left-[25rem] bottom-[20rem] hover:scale-105 transition-transform duration-500 cursor-pointer`} width={170} height={170}/></Link>
-                <Link href="books/syrosh"><Image src={image8} alt="cover" className={`absolute z-10 shadow-xl rounded-lg right-[35rem] bottom-[0.5rem] hover:scale-105 transition-transform duration-500 cursor-pointer`} width={170} height={170}/></Link>
+                <Link href="books/syrwsh"><Image src={image8} alt="cover" className={`absolute z-10 shadow-xl rounded-lg right-[35rem] bottom-[0.5rem] hover:scale-105 transition-transform duration-500 cursor-pointer`} width={170} height={170}/></Link>
                 <Link href="books/the-wicked-king"><Image src={image10} alt="cover" className={`absolute z-10 shadow-xl rounded-lg left-[35rem] bottom-[0.5rem] hover:scale-105 transition-transform duration-500 cursor-pointer`} width={170} height={170}/></Link>
               </div>
             </div>
