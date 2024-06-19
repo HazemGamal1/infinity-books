@@ -8,7 +8,7 @@ import BookLandingCard from '@/app/components/BookLandingCard'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 
-const page = ({params} : {params: {category : string}}) => {
+const CategoryPage = ({params} : {params: {category : string}}) => {
   const [books, setBooks] = useState<IBook[]>()
   const [viewArr, setViewArr] = useState<IBook[]>();
   const [searchVal, setSearchVal] = useState<string>();
@@ -84,4 +84,4 @@ const page = ({params} : {params: {category : string}}) => {
   )
 }
 
-export default page
+export default CategoryPage
