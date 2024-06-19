@@ -8,7 +8,7 @@ import LoadScreen from '../components/LoadScreen';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
-const page = () => {
+const Page = () => {
   const [books, setBooks] = useState<IBook[]>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [viewArr, setViewArr] = useState<IBook[]>();
@@ -75,4 +75,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

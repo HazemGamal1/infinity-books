@@ -10,9 +10,8 @@ import BooksByTheSameAuthor from '@/app/components/BooksByTheSameAuthor'
 import BuyOptionsBox from '@/app/components/BuyOptionsBox'
 import { FaHeart } from 'react-icons/fa'
 import useWishlist from '@/store/useWishlistStore'
-import Head from 'next/head'
 
-const page = ({params} : {params: {slug : string}}) => {
+const Page = ({params} : {params: {slug : string}}) => {
     const [showDescription, setShowDescription] = useState<boolean>(false);
     const [book, setBook] = useState<IBook>();
     const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -111,4 +110,4 @@ const page = ({params} : {params: {slug : string}}) => {
   )
 }
 
-export default page
+export default Page
