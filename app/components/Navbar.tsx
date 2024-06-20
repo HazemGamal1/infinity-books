@@ -148,7 +148,11 @@ const Navbar = () => {
             </div>
             {
               cart.length > 0 &&
+              
               <Dialog>
+                <div className='py-2'>
+                  Total: {total} EGP
+                </div>
                 <DialogTrigger className='w-full bg-main p-2 text-white rounded-md hover:opacity-90 px-4'>Buy</DialogTrigger>
                 <DialogContent>
                 <DialogHeader>
@@ -163,6 +167,7 @@ const Navbar = () => {
                   <Input type='text' id='phone' onChange={(e) => setNumber(e.target.value)}/>
                   <label htmlFor="address">Address</label>
                   <Input type='text' id='address' onChange={(e) => setAddress(e.target.value)}/>
+                  Total : {total} EGP
                   <Button onClick={() => handlePlaceOrder()}>Order</Button>
                 </DialogContent>
               </Dialog>

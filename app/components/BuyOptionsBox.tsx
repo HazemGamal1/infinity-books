@@ -6,12 +6,20 @@ import { BsCash } from 'react-icons/bs'
 import { useState } from 'react'
 import useCartStore from '@/store/useCartStore'
 import BuyButton from './BuyButton'
-
+import { toast } from 'sonner'
 const BuyOptionsBox = ({book} : {book : IBook}) => {
-    const [showPayment, setShowPayment] = useState<boolean>(false);
     const [quantity, setQuantity] = useState<number>(1);
-    const {addToCart} = useCartStore();
+    const {addToCart, cart} = useCartStore();
 
+    const handleAddToCart= (title: string, image: string, author: string, price: number, slug: string, quantity: number) => {
+        addToCart({title: title, imageUrl: image, author: author, price: price, quantity: quantity, slug: slug});
+        if(cart.some((book) => book.title === title))
+        {
+          toast.success("Book quantity increased.")
+        }else{
+          toast.success("Added to cart");
+        }
+      } 
 
     const handleDecrement = () => {
         if(quantity === 1) {
@@ -38,7 +46,7 @@ const BuyOptionsBox = ({book} : {book : IBook}) => {
             </div>
             {
                 book &&
-                <Button className='my-2 w-full select-none' variant={"outline"} onClick={() => addToCart({title: book.title, author: book.author,  price: book.price, slug: book.slug, imageUrl: book.imageUrl, quantity: quantity})}>Add To Cart</Button>
+                <Button className='my-2 w-full select-none' variant={"outline"} onClick={() => handleAddToCart(book.title, book.imageUrl,  book.author,  book.price, book.slug, quantity)}>Add To Cart</Button>
 
             }
             <BuyButton price={book.price} title={book.title} author={book.author} quantity={quantity} slug={book.slug} image={book.imageUrl}/>

@@ -26,6 +26,9 @@ const CartCard = ({book} : {book: IcartItem}) => {
             <p className='font text-neutral-500 text-sm lg:text-lg'>
                 {book.author}
             </p>
+            <p className='font text-neutral-600 dark:text-neutral-200 text-sm lg:text-md'>
+                {book.price} EGP
+            </p>
             <div className='font pt-3 flex gap-2 items-center'>
                 <div className='flex items-center gap-2 select-none'>
                     <div className='rounded-full border-2 text-xl fles items-center hover:text-main cursor-pointer' onClick={() => decreaseQuantity()}>

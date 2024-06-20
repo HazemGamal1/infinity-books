@@ -75,12 +75,13 @@ const BuyButton = ({title, price, slug} : IProps) => {
           <label htmlFor="phone" className='flex gap-2 items-center'>Phone <span className='text-xs text-neutral-500'>(Phone number must be connected to whats app )</span></label>
           <Input type='text' id='phone' onChange={(e) => setNumber(e.target.value)} value={number}/>
           <label htmlFor="address">Address</label>
-          <Input type='text' id='address' onChange={(e) => setAddress(e.target.value)} value={address}/>
+          <Input type='' id='address' onChange={(e) => setAddress(e.target.value)} value={address}/>
 
           <div className='flex w-full items-center justify-between'>
             <label htmlFor="quantity" className='w-full'>Book Quantity</label>
             <Input type='number' min={1} placeholder='1' id='quantity'onChange={(e) => setQuantity(Number(e.target.value))}/>
           </div>
+          Total: {price * quantity} EGP
           <Button onClick={() => handlePlaceOrder()}>Order</Button>
         </DialogContent>
     </Dialog>
