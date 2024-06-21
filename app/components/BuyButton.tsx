@@ -85,7 +85,7 @@ const handleClose = () => {
                           <p>Order was confirmed</p>
                           <p>Thank you for using Infinity Books</p>
                           <div className='dark:bg-neutral-700 bg-main/30 rounded-lg p-2 my-6'>
-                            <p>في حالة الرغبة في الغاء او تغير الطلب يرجى الارسال الى صفحة من صفحاتنا على موافع التواصل الاجتماعي</p>
+                            <p>في حالة الرغبة في الغاء او تغير الطلب يرجى الارسال الى صفحة من صفحاتنا على مواقع التواصل الاجتماعي</p>
                           </div>
                           <DialogTrigger onClick={() => handleClose()} className='bg-main w-full text-white p-2 rounded-lg'>Close</DialogTrigger>
                         </div>

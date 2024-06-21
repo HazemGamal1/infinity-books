@@ -180,7 +180,7 @@ const handleClose = () => {
                       </DialogHeader>
                         <label htmlFor="name">Name</label>
                         <Input type='text' id='name' onChange={(e) => setName(e.target.value)} value={name}/>
-                        <label htmlFor="phone" className='flex gap-2 items-center'>Phone <span className='text-xs text-neutral-500'>(A phone number connected to whats app is preffered)</span></label>
+                        <label htmlFor="phone" className='flex gap-2 items-center'>Phone <span className='text-xs text-neutral-500'>(Phone number must be connected to whats app)</span></label>
                         <Input type='text' id='phone' onChange={(e) => setNumber(e.target.value)} value={number}/>
                         <label htmlFor="address">Address</label>
                         <Textarea  id='address' onChange={(e) => setAddress(e.target.value)} value={address}/>
